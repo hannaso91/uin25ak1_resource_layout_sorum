@@ -10,22 +10,20 @@ resources.map(resource => resourceHTML += `
 
 document.getElementById("navtab").innerHTML = resourceHTML
 
-function updateContent() {
-    let content = ""
+let activeCategory = "HTML" //legger inne en default her
 
-    resources.map((resource, index) => content += `
+/*function updateContent(index) {
+    let content = ""
+|   let filterResource = resources.filter(res => res.category === activeCategory)
+
+    document.getElementById("content").innerHTML = `
         <h2 id="headtext">${resource.category}</h2>
         <p id="text">${resource.text}</p>
-        <nav id="links">
-            <ul>
-                <li><a href="https://www.w3schools.com/">W3Schools</a></li>
-                <li><a href="https://html.spec.whatwg.org/">HTML living standard</a></li>
-                <li><a href="https://html.com/">HTML.com tutorials</a></li>
-            </ul>
-        </nav>
-    `)
-    document.getElementById("content").innerHTML = content
+        <ul>
+            ${resource.sources.map(source => `
+                <li><a href="${source.url}" targer ="_blank">${source.title}</a></li>` 
+            )}
+        </ul>`
 }
 
-updateContent()
-
+updateContent()*/

@@ -17,3 +17,16 @@ body {
     font-family: Montserrat, sans-serif;
     font-size: 20px; 
 }
+
+#navtab {
+    display: flex;
+    justify-content: center;
+
+    ul {
+        list-style: none;
+        text-align: center;
+        padding: 2rem;
+        background: var(--allWhite);
+        border: 5px solid var(--white)
+    }
+}
