@@ -1,29 +1,25 @@
 let resourceHTML = ""
 
 resources.map(resource => resourceHTML += `
-    <ul>
-        <li>
-            <p class="tab">${resource.category}</p>
-        </li>
-    </ul>
+    <li>
+        <p class="tab" onclick="updateContent">${resource.category}</p>
+    </li>
 `) 
 
 document.getElementById("navtab").innerHTML = resourceHTML
 
-let activeCategory = "HTML" //legger inne en default her
 
-/*function updateContent(index) {
-    let content = ""
-|   let filterResource = resources.filter(res => res.category === activeCategory)
 
-    document.getElementById("content").innerHTML = `
-        <h2 id="headtext">${resource.category}</h2>
-        <p id="text">${resource.text}</p>
-        <ul>
-            ${resource.sources.map(source => `
-                <li><a href="${source.url}" targer ="_blank">${source.title}</a></li>` 
-            )}
-        </ul>`
+function updateContent(categoryName) {
+    const activeCategory = resources.filter(resource => resource.category === categoryName);
+    const selectedCategory = activeCategory[0]
+
+    const contentHTML = `
+        <h2 id="headtext">${selectedCategory.category}</h2>
+        <p id="text">${selectedCategory.text}</p>
+        `
+
+    document.getElementById("whiteContainer").innerHTML = contentHTML
 }
 
-updateContent()*/
+updateContent("CSS")

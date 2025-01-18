@@ -20,13 +20,35 @@ body {
 
 #navtab {
     display: flex;
-    justify-content: center;
+    width: 40%;
+    justify-content: space-between;
+    list-style: none;
+    text-align: center;
+    font-weight: bold;
+    margin: auto auto 0 auto;
+    padding: 0;
+    
 
-    ul {
-        list-style: none;
-        text-align: center;
-        padding: 2rem;
-        background: var(--allWhite);
-        border: 5px solid var(--white)
+    li {
+        background: var(--blue);
+        color: var(--white);
+        padding: 0.7rem 3rem;
+
     }
+
+    li:hover {
+        background: var(--allWhite);
+        color: var(--blue);
+        cursor: pointer;
+    }
+    
+}
+
+#whiteContainer {
+    background: var(--allWhite);
+    width: 38.8%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 }
