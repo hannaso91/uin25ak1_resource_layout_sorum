@@ -11,13 +11,16 @@ document.getElementById("navtab").innerHTML = resourceHTML
 
 
 function updateContent(categoryName) {
-    const activeCategory = resources.filter(resource => resource.category === categoryName);
-    const selectedCategory = activeCategory[0]
+    const filtered = resources.filter(resource => resource.category === categoryName);
+    const selectedCategory = filtered[0]
+
+    console.log(filtered)
 
     const contentHTML = `
-        <h2 id="headtext">${selectedCategory.category}</h2>
-        <p id="text">${selectedCategory.text}</p>
-        `
+        <article>
+            <h2 id="headtext">${selectedCategory.category}</h2>
+            <p id="text">${selectedCategory.text}</p>
+        </article>`
 
     document.getElementById("whiteContainer").innerHTML = contentHTML
 }
