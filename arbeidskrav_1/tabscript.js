@@ -12,15 +12,13 @@ document.getElementById("navtab").innerHTML = resourceHTML
 
 function updateContent(categoryName) {
     const filtered = resources.filter(resource => resource.category === categoryName);
-    const selectedCategory = filtered[0]
+    const selected = filtered[0]
     const contentHTML = `
         <article>
-            <h2 id="headtext">${selectedCategory.category}</h2>
-            <p id="text">${selectedCategory.text}</p>
+            <h2 id="headtext">${selected.category}</h2>
+            <p id="text">${selected.text}</p>
             <ul>
-                <li>
-                    
-                </li>
+                ${selected.sources. map(source => `<li><a href="${source.url}" target="_blank">${source.title}</a></li>`).join("")}
             </ul>
         </article>`
 
@@ -29,4 +27,4 @@ function updateContent(categoryName) {
    
 }
 
-updateContent("CSS")
+updateContent("HTML")
