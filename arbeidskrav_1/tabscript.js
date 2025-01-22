@@ -2,7 +2,7 @@ let resourceHTML = ""
 
 resources.map(resource => resourceHTML += `
     <li>
-        <p class="tab" onclick="updateContent('${resource.category}')">${resource.category}</p>
+        <button id="tab" onclick="updateContent('${resource.category}')">${resource.category}</button>
     </li>
 `) 
 
@@ -18,12 +18,13 @@ function updateContent(categoryName) {
             <h2 id="headtext">${selected.category}</h2>
             <p id="text">${selected.text}</p>
             <ul>
-                ${selected.sources. map(source => `<li><a href="${source.url}" target="_blank">${source.title}</a></li>`).join("")}
+                ${selected.sources.map(source => `<li><a href="${source.url}" target="_blank">${source.title}</a></li>`).join("")}
             </ul>
         </article>`
 
     document.getElementById("whiteContainer").innerHTML = contentHTML 
 
+   
 }
 
 updateContent("HTML")

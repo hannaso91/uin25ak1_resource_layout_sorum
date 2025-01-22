@@ -33,18 +33,31 @@ body {
     
 
     li {
-        display: block;
-        background: var(--blue);
-        color: var(--white);
-        padding: 1rem 3rem;
+        
 
+        button {
+            display: block;
+            background: var(--blue);
+            color: var(--white);
+            font-weight: bold;
+            font-family: Montserrat, sans-serif;
+            padding: 30px 40px;
+            border: none;
+            font-size: 20px;
+            padding-right: 60px;
+              
+        }
+        
+        button:hover {
+            background: var(--allWhite);
+            color: var(--blue);
+            cursor: pointer;
+        } 
+
+    
     }
 
-    li:hover {
-        background: var(--allWhite);
-        color: var(--blue);
-        cursor: pointer;
-    }
+    
     
 }
 
