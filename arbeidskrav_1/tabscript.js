@@ -23,8 +23,7 @@ function updateContent(categoryName) {
         </article>`
 
     document.getElementById("whiteContainer").innerHTML = contentHTML 
-    
-   
+
 }
 
 updateContent("HTML")
