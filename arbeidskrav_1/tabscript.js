@@ -2,9 +2,7 @@ let resourceHTML = ""
 //Her skriver jeg ut listen over knappene i toppen med .map, .map iterer gjennom hele arrayen og skriver ut deretter
 //jeg har her spesifikt bedt om å skrive ut det som ligger i kategori. 
 resources.map(resource => resourceHTML += `
-    <li>
         <button class="tab" onclick="updateContent('${resource.category}', this)">${resource.category}</button>
-    </li>
 `) 
 
 document.getElementById("navtab").innerHTML = resourceHTML
