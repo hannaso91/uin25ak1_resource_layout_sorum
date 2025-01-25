@@ -77,3 +77,8 @@ body {
     color: var(--blue);
     
 }
+
+.tab{
+    background-color: var(--blue);
+    color: var(--white)
+}
