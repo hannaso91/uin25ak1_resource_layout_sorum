@@ -16,7 +16,7 @@ function updateContent(categoryName, clickedTab) {
         console.error('Invalid tab element:', clickedTab);
         return;
     }
-
+    //filtrerer innholde passert på hva som blir trykket på. FUnksjonen blir kalt ved onclick i .map lenger opp
     const filtered = resources.filter(resource => resource.category === categoryName);
     const selected = filtered[0]
     const contentHTML = `
@@ -32,19 +32,25 @@ function updateContent(categoryName, clickedTab) {
 
     
      const tabs = document.querySelectorAll(".tab, .active-tab");
+     //jeg skjønte raskt at jeg måtte itere gjennom alle tabs og finne den som var aktiv, laget derfor en 
+     //tradisjonell for løkke for å gå igjennom og dermed skrive ut farger etter det
      for (let i = 0; i < tabs.length; i++) {
          tabs[i].classList.remove("active-tab");
          tabs[i].classList.add("tab");
          tabs[i].style.backgroundColor = "#2A324B";
-         tabs[i].style.color = 'white';
+         tabs[i].style.color = "#ffffff";
      }
- 
+     
+     //etter å ha testet veldig mye frem og tilbake la jeg inn hele koden min i github copilot.
+     //Jeg fikk det ikke til å fungere og ønsket å lære hvordan jeg skulle få dette til
+     //Trykket derfor på ctrl+a og kopierte deretter alt og fikk da koden fra linje 48 og ned som svar. 
+
      clickedTab.classList.remove("tab");
      clickedTab.classList.add("active-tab");
-     clickedTab.style.backgroundColor = 'white';
+     clickedTab.style.backgroundColor = "#ffffff";
      clickedTab.style.color = "#2A324B";
  }
- 
+    //denne koden gjør det slik at når siden lastes første gang så er HTML tab aktiv. 
     const firstTab = document.querySelector(".tab");
     if (firstTab) {
         updateContent("HTML", firstTab);
