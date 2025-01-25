@@ -2,7 +2,7 @@ let resourceHTML = ""
 
 resources.map(resource => resourceHTML += `
     <li>
-        <button id="tab" onclick="updateContent('${resource.category}')">${resource.category}</button>
+        <button class="tab" onclick="updateContent('${resource.category}')">${resource.category}</button>
     </li>
 `) 
 
@@ -23,6 +23,8 @@ function updateContent(categoryName) {
         </article>`
 
     document.getElementById("whiteContainer").innerHTML = contentHTML 
+
+   const button = document.getElementsByClassName("tab") = selected
 
    
 }
